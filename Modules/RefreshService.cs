@@ -15,6 +15,15 @@ namespace FirstGameTry.Modules
             CalcResouce();
         }
 
+        public static void GenMap(List<List<string>> Items)
+        {
+            if (Items == null)
+            {
+                Items = new List<List<string>>();
+            }
+            Items.Clear();
+        }
+
         private static void CalcResouce()
         {
             gp.Food += gp.IncreaseSpeedOfFood;

@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -27,12 +28,28 @@ namespace FirstGameTry
         {
             InitializeComponent();
             InitGame();
+            DrawMap();
         }
 
         private void InitGame()
         {
             gamePad = GamePad.getInstance();
             gamePad.Techs = gamePad.Food = gamePad.Golds = gamePad.Metals = 0;
+        }
+
+        private void DrawMap()
+        {
+            gamePad = GamePad.getInstance();
+            var map = gamePad.map;
+            if (map == null)
+            {
+                map = new Map()
+                {
+                    Columns = 5,
+                    Rows = 5,
+                };
+            }
+            
         }
 
         private void Update()

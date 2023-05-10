@@ -36,5 +36,17 @@ namespace FirstGameTry.Models
         public double IncreaseSpeedOfMetals { get; set; }
 
         public double IncreaseSpeedOfFood { get; set; }
+
+        public Map map { get; set; }
     }
+
+    public class Map
+    {
+        public int Columns { get; set; }
+
+        public int Rows { get; set; }
+
+        public List<List<string>>? Items { get; set; }
+    }
+
 }
